@@ -15,7 +15,7 @@ app.use(upload());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static('src'));
 // Spin up the server
 const port = 5000;
 app.listen(port, ()=>
