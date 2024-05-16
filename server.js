@@ -17,9 +17,9 @@ app.use(express.json());
 // Initialize the main project folder
 app.use(express.static('src'));
 // Spin up the server
-const port = 5000;
-app.listen(port, ()=>
-  console.log(`running on localhost: ${port}`));
+const port = process.env.PORT || 80; // Use the default HTTP port 5000 for Render.com
+app.listen(port, '0.0.0.0', ()=>
+  console.log(`running on port: ${port}`));
 //requests
 app.get('/', (req, res) => {
   res.sendFile(path.resolve('index.html'));
