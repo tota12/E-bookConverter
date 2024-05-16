@@ -15,15 +15,14 @@ app.use(upload());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 // Initialize the main project folder
-app.use(express.static('src'));
+app.use(express.static('app'));
 // Spin up the server
-const port = process.env.PORT || 80; // Use the default HTTP port 5000 for Render.com
+const port = process.env.PORT || 80; // Use the default HTTP port 80 for Railway.com
 app.listen(port, '0.0.0.0', ()=>
   console.log(`running on port: ${port}`));
 //requests
 app.get('/', (req, res) => {
   res.sendFile(path.resolve('index.html'));
-  //res.sendFile(__dirname + '/index.html')
 })
 app.post('/', (req, res) => 
 {
