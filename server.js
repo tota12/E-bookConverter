@@ -15,7 +15,7 @@ app.use(upload());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 // Initialize the main project folder
-app.use(express.static('app'));
+app.use(express.static(__dirname));
 // Spin up the server
 const port = process.env.PORT || 80; // Use the default HTTP port 80 for Railway.com
 app.listen(port, '0.0.0.0', ()=>
